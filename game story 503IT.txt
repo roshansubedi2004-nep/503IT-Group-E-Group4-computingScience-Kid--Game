@@ -1,9 +1,16 @@
-The game's story mode is called Password Defender.
+Password Defender – Game Story (Shortened Human‑Written Version)
+Password Defender is an educational cyber‑security game that helps teenagers and university students build strong password habits through simple, interactive play. Players take on the role of a Cyber Defender, responsible for protecting digital accounts by making safe password choices in realistic online situations.
 
-The Password Defender is an educational game in the form of a quiz for teenagers and university students to increase awareness of password security. The game is centered around real-life online activities that students have in their daily online lives – including setting up a social media account, logging into systems at the university, using email services and managing their own online platforms.
+The game opens with a clear introduction that explains the mission, learning goals, and basic controls. A virtual assistant guides players with helpful hints and encouragement, making the onboarding experience smooth and beginner‑friendly.
 
-Throughout the game, players are presented with a series of scenario based questions and decide on the strength of the password and then choose the strongest one. The game feedback is immediate, giving an explanation to why some passwords are weak, and useful hints on how to make their online security practices better at each stage. Progress indicators and points are used to encourage participation and to reinforce learning.
+The story unfolds through everyday digital scenarios—setting up social media accounts, logging into university systems, checking email, and managing online services. Each level presents a new situation where players review password options and choose the most secure one.
 
-The player's progress through the levels allows them to gain key cyber security skills such as using strong and unique passwords, not using their personal information, knowing the dangers of reusing passwords, and basic cyber safety rules.
+Gameplay follows a straightforward flow:
+understand the scenario → choose a password → get instant feedback → earn rewards → move on.  
+After each choice, players receive a short explanation showing why the password is strong or weak, helping them learn through active decision‑making.
 
-The game will provide students with real-life knowledge that will assist them with online etiquette and security of online accounts. The goal of Password Defender is to educate and create awareness about the need for informed decision making and reinforce everyday password practices in a clear, engaging and educational way.
+To keep players motivated, the game includes progress bars, points, badges, and level progression. The interface uses simple language, clear navigation, and accessible visuals so players can focus on learning without confusion.
+
+As players advance, they develop key skills such as creating strong and unique passwords, avoiding personal information, recognising the risks of password reuse, and applying basic cyber‑safety practices. These lessons connect directly to real‑world behaviour, encouraging safer habits outside the game.
+
+Overall, Password Defender provides an engaging and user‑friendly learning experience. Through realistic scenarios, interactive choices, and instant feedback, the game strengthens everyday password security and promotes responsible online behaviour.
