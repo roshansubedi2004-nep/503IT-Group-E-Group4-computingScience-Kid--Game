@@ -1,1 +1,2 @@
-
+KAHOOT
+Duolingo
