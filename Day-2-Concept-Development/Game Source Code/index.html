@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Defenders</title>
+  <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+  <div class="screen active" id="screen-start">
+    <div class="start-logo-ring">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-3"></div>
+      <div class="ring-center" aria-label="Lock Icon">🔐</div>
+    </div>
+    <div class="game-title">Password Defenders</div>
+    <p class="subtitle">— CLICK TO BEGIN —</p>
+    <button class="start-btn" id="start-btn">▶ START</button>
+  </div>
 
+  <div class="screen" id="screen-rules">
+    <div class="rules-header">Rules</div>
+    <div class="panel">
+      <ul class="rules-list">
+        <li>You are chosen to crack a safe to retrieve secret documents for your client.</li>
+        <li>Players choose one correct answer for each 3 questions.</li>
+        <li>Correct answer earns points. Points are the documents.</li>
+        <li>Wrong answer won't earn any points.</li>
+        <li>Players cannot skip questions.</li>
+        <li>Wrong answers give different results and safety tips.</li>
+        <li>Earn points, level up, get badges and learn password safety tips along the way.</li>
+      </ul>
+    </div>
+    <button class="action-btn" id="begin-mission-btn">BEGIN MISSION</button>
+  </div>
+  <script src="script.js"></script>
+</html>
