@@ -1,0 +1,8 @@
+| Section              | What to write                                                                                                                                                                            |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Final selected tool  | HTML, CSS and JavaScript                                                                                                                                                                 |
+| Reason for choice    | We selected HTML, CSS and JavaScript because we used these tools most to develop our game. They help us create a web-based quiz game with buttons, colours, score, feedback and rewards. |
+| Rejected tool        | Google Forms / Kahoot                                                                                                                                                                    |
+| Reason for rejection | We rejected Google Forms / Kahoot because it gives less control over the design and is not suitable for building our own custom game.                                                    |
+| Prototype output     | A password safety quiz prototype                                                                                                                                                         |
+| Evidence to upload   | index.html, style.css, script.js, screenshots and testing notes                                                                                                                          |
