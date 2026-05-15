@@ -1,12 +1,12 @@
-| Canvas section        | Group answer                                                         |
-| --------------------- | -------------------------------------------------------------------- |
-| Game title            | Password  Defender                                                    |
-| Target audience       | Teenagers and university students                                    |
-| Cyber-safety topic    | Password safety                                                      |
-| Learning objective    | Players learn to create strong passwords and protect accounts        |
-| Game format           | Quiz game / Scenario-based digital game                              |
-| Core gameplay loop    | Read challenge → Choose answer → Get feedback → Earn points          |
-| UX design choices     | Bright cyber theme, large buttons, icons and clear layout            |
-| Accessibility choices | Large text, simple words and high contrast colours                   |
-| Reward and motivation | Stars, badges, points and levels                                     |
-| Success measure       | Players correctly identify strong passwords and explain safety rules |
+| Canvas section        | What to include                                                                     | Quality expectation                                                      |
+| --------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Game title            | Final or working name of the game.                                                  | Clear, memorable and suitable for the target audience                    |
+| Target audience       | Exact user group, age and context.                                                  | Not just "children" - be specific, e.g., 10-year-old children            |
+| Cyber-safety topic    | The online safety issue being taught.                                               | Phishing, passwords, online privacy, cyberbullying, scams or safe gaming |
+| Learning objective    | What the player should learn by playing.                                            | Measurable and linked to cyber safety                                    |
+| Game format           | Web game, quiz, card game, board game, app mock-up, Twine story, Scratch game, etc. | Realistic for the team and time available                                |
+| Core gameplay loop    | What the player repeatedly does.                                                    | Example: read challenge → choose answer → receive feedback → earn reward |
+| UX design choices     | Colours, layout, buttons, background, icons and characters.                         | Clearly justified based on target audience                               |
+| Accessibility choices | Large text, simple words, contrast, icons, clear feedback, inclusive visuals.       | Specific choices, not vague statements                                   |
+| Reward and motivation | Stars, badges, points, level progress or positive messages.                         | Explains how the game keeps the user engaged                             |
+| Success measure       | How the group will know the user learned something.                                 | Example: answer 5 questions and explain 3 safety rules                   |
