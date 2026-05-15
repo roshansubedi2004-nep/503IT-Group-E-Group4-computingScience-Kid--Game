@@ -1,1 +1,8 @@
-storyboard
+| Frame | What to show            | UX details to include                                  | Example for 10-year-old target audience                                 |
+| ----- | ----------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------- |
+| 1     | Welcome/start screen    | Game title, friendly guide/character, start button     | *Cyber Safety Quest* with a Start Game button                           |
+| 2     | Instructions            | Short steps, icons, clear action words                 | Read the challenge, choose the safest answer, get feedback, earn a star |
+| 3     | First challenge         | Cyber-safety scenario, background, message or problem  | You won a prize! Click here now.                                        |
+| 4     | Player choice           | Large answer buttons, clear options, no confusing text | Click it / Ignore it / Ask a trusted adult                              |
+| 5     | Feedback                | Correct/incorrect response plus learning explanation   | Correct: suspicious links can be unsafe                                 |
+| 6     | Reward/learning summary | Score, badge, star or key lesson summary               | You earned a Cyber Safety Star. Think before you click.                 |
