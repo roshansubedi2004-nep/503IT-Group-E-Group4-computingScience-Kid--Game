@@ -14,4 +14,5 @@ Does the wrong answer show helpful feedback?	YES /
 Does the feedback teach a cyber-safety lesson?	YES /
 Is there a reward, score, star, badge or progress message?	YES /
 Is the prototype suitable for the target audience?	YES  /
-What must be improved before next week?	YES  
+What must be improved before next week?	YES  .
+
