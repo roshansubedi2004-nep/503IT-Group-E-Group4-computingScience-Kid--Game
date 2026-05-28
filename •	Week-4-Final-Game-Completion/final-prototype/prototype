@@ -1,1 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Defenders</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0d1e36;
+    --bg-panel: #152840;
+    --bg-card: #1a3050;
+    --accent-blue: #00c8ff;
+    --accent-cyan: #00ffea;
+    --accent-green: #00ff88;
+    --accent-red: #ff3355;
+    --accent-yellow: #ffd700;
+    --text-primary: #e8f4ff;
+    --text-muted: #7a9cbf;
+    --border-glow: rgba(0,200,255,0.3);
+    --lock-correct: #00ff88;
+    --lock-wrong: #ff3355;
+    --lock-neutral: #2a4a7a;
+  }
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-dark);
+    font-family: 'Exo 2', sans-serif;
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Animated grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,200,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,200,255,0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridScroll 20s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes gridScroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(50px); }
+  }
+
+  /* Floating particles */
+  .particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    animation: float linear infinite;
+    opacity: 0;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-20px) translateX(30px); opacity: 0; }
+  }
+
+  /* Main container */
+  .game-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px 20px;
+  }
+
+  /* SCREENS */
+  .screen {
+    display: none;
+    animation: screenIn 0.5s ease forwards;
+  }
+  .screen.active { display: block; }
+
+  @keyframes screenIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* Panel style */
+  .panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-glow);
+    border-radius: 16px;
+    padding: 40px;
+    position: relative;
+    box-shadow:
+      0 0 40px rgba(0,200,255,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  .panel::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 20px; right: 20px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+  }
+
+  /* Corner decorations */
+  .panel-corner {
+    position: absolute;
+    width: 16px; height: 16px;
+    border-color: var(--accent-cyan);
+    border-style: solid;
+  }
+  .panel-corner.tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+  .panel-corner.tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+  .panel-corner.bl { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+  .panel-corner.br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+
+  /* ===== TITLE SCREEN ===== */
+  .title-screen { text-align: center; }
+
+  .logo-svg {
+    display: inline-block;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 18px rgba(0,200,255,0.35));
+    animation: logoPulse 3s ease-in-out infinite;
+  }
+
+  .logo-svg #gear-large {
+    transform-origin: 0px 0px;
+    animation: gearSpinCW 8s linear infinite;
+  }
+
+  @keyframes logoPulse {
+    0%, 100% { filter: drop-shadow(0 0 18px rgba(0,200,255,0.35)); }
+    50% { filter: drop-shadow(0 0 30px rgba(0,200,255,0.6)); }
+  }
+
+  @keyframes gearSpinCW {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .game-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.6rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 50%, var(--accent-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+
+  .game-subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  .title-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    margin: 0 auto 32px;
+  }
+
+  .mission-text {
+    background: var(--bg-card);
+    border: 1px solid rgba(0,200,255,0.15);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .mission-text strong { color: var(--accent-cyan); }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 14px 40px;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .btn:hover::before { opacity: 1; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #0066cc, #0099ff);
+    color: white;
+    box-shadow: 0 0 20px rgba(0,153,255,0.4), 0 4px 15px rgba(0,0,0,0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0,200,255,0.6), 0 6px 20px rgba(0,0,0,0.4);
+  }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(0,255,234,0.1);
+  }
+  .btn-secondary:hover {
+    background: rgba(0,255,234,0.08);
+    box-shadow: 0 0 20px rgba(0,255,234,0.2);
+    transform: translateY(-2px);
+  }
+
+  .btn-green {
+    background: linear-gradient(135deg, #008844, #00cc66);
+    color: white;
+    box-shadow: 0 0 20px rgba(0,255,136,0.3);
+  }
+  .btn-green:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0,255,136,0.5);
+  }
+
+  /* ===== RULES SCREEN ===== */
+  .rules-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent-yellow);
+    text-align: center;
+    margin-bottom: 8px;
+    text-shadow: 0 0 20px rgba(255,215,0,0.4);
+  }
+
+  .rules-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 0.1em;
+    margin-bottom: 28px;
+  }
+
+  .rule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .rule-item:last-child { border-bottom: none; }
+
+  .rule-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    width: 32px;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .rule-text {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+  .rule-text strong { color: var(--text-primary); }
+
+  /* ===== QUESTION SCREEN ===== */
+  .hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    background: var(--bg-card);
+    border: 1px solid rgba(0,200,255,0.15);
+    border-radius: 10px;
+  }
+
+  .hud-item {
+    text-align: center;
+  }
+
+  .hud-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .hud-value {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+  }
+
+  .lock-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .lock-indicator {
+    width: 44px;
+    height: 52px;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+  }
+
+  /* Upcoming — muted grey */
+  .lock-indicator.upcoming svg .lock-body { fill: #1e3555; stroke: #3a567a; }
+  .lock-indicator.upcoming svg .lock-shackle { stroke: #3a567a; }
+  .lock-indicator.upcoming svg .lock-keyhole { fill: #3a567a; }
+
+  /* Current — red glow */
+  .lock-indicator.current svg .lock-body { fill: #3d0f18; stroke: var(--accent-red); }
+  .lock-indicator.current svg .lock-shackle { stroke: var(--accent-red); }
+  .lock-indicator.current svg .lock-keyhole { fill: var(--accent-red); }
+  .lock-indicator.current {
+    filter: drop-shadow(0 0 8px rgba(255,51,85,0.7));
+    animation: lockBob 1.5s ease-in-out infinite;
+  }
+
+  /* Wrong completed — stays red, closed lock */
+  .lock-indicator.wrong-done svg .lock-body { fill: #3d0f18; stroke: var(--accent-red); }
+  .lock-indicator.wrong-done svg .lock-shackle { stroke: var(--accent-red); }
+  .lock-indicator.wrong-done svg .lock-keyhole { fill: var(--accent-red); }
+  .lock-indicator.wrong-done {
+    filter: drop-shadow(0 0 6px rgba(255,51,85,0.5));
+  }
+
+  /* Correct completed — cyan open lock */
+  .lock-indicator.unlocked svg .lock-body { fill: #0a2a40; stroke: var(--accent-cyan); }
+  .lock-indicator.unlocked svg .lock-shackle { stroke: var(--accent-cyan); }
+  .lock-indicator.unlocked svg .lock-keyhole { fill: var(--accent-cyan); }
+  .lock-indicator.unlocked {
+    filter: drop-shadow(0 0 8px rgba(0,255,234,0.6));
+    animation: lockPop 0.45s ease;
+  }
+
+  @keyframes lockPop {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.25) rotate(-8deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+
+  @keyframes lockBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .question-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .question-text {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 6px;
+    text-shadow: 0 0 20px rgba(0,200,255,0.3);
+  }
+
+  .question-hint {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    margin-bottom: 28px;
+  }
+
+  .options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .option-btn {
+    background: var(--bg-card);
+    border: 2px solid rgba(0,200,255,0.2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .option-btn::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0; width: 4px;
+    background: var(--accent-blue);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .option-btn:hover {
+    border-color: var(--accent-blue);
+    background: rgba(0,100,200,0.15);
+    transform: translateX(4px);
+    box-shadow: 0 0 20px rgba(0,200,255,0.1);
+  }
+  .option-btn:hover::before { opacity: 1; }
+
+  .option-btn.correct {
+    border-color: var(--accent-green);
+    background: rgba(0,255,136,0.1);
+    box-shadow: 0 0 25px rgba(0,255,136,0.2);
+    animation: correctPulse 0.4s ease;
+    pointer-events: none;
+  }
+  .option-btn.correct::before {
+    background: var(--accent-green);
+    opacity: 1;
+  }
+
+  .option-btn.wrong {
+    border-color: var(--accent-red);
+    background: rgba(255,51,85,0.1);
+    box-shadow: 0 0 25px rgba(255,51,85,0.2);
+    animation: wrongShake 0.4s ease;
+    pointer-events: none;
+  }
+  .option-btn.wrong::before {
+    background: var(--accent-red);
+    opacity: 1;
+  }
+
+  .option-btn.disabled { pointer-events: none; opacity: 0.5; }
+
+  @keyframes correctPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes wrongShake {
+    0%, 100% { transform: translateX(4px); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+  }
+
+  .option-letter {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background: rgba(0,200,255,0.1);
+    border: 1px solid rgba(0,200,255,0.3);
+    border-radius: 6px;
+    width: 28px; height: 28px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .option-btn.correct .option-letter { color: var(--accent-green); border-color: var(--accent-green); background: rgba(0,255,136,0.15); }
+  .option-btn.wrong .option-letter { color: var(--accent-red); border-color: var(--accent-red); background: rgba(255,51,85,0.15); }
+
+  .option-password {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+  }
+
+  /* Feedback box */
+  .feedback-box {
+    display: none;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    animation: feedbackIn 0.3s ease forwards;
+  }
+  .feedback-box.show { display: block; }
+
+  @keyframes feedbackIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .feedback-box.correct-fb {
+    background: rgba(0,255,136,0.08);
+    border: 1px solid rgba(0,255,136,0.3);
+    color: var(--accent-green);
+  }
+  .feedback-box.wrong-fb {
+    background: rgba(255,51,85,0.08);
+    border: 1px solid rgba(255,51,85,0.3);
+    color: #ff8899;
+  }
+
+  .feedback-box .fb-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .points-toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent-green);
+    text-shadow: 0 0 30px rgba(0,255,136,0.8);
+    pointer-events: none;
+    z-index: 100;
+    animation: toastPop 1.2s ease forwards;
+  }
+
+  @keyframes toastPop {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    20% { opacity: 1; transform: translate(-50%, -60%) scale(1.1); }
+    60% { opacity: 1; transform: translate(-50%, -70%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -80%) scale(0.9); }
+  }
+
+  .next-btn-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+
+  /* ===== COMPLETE SCREEN ===== */
+  .complete-screen { text-align: center; }
+
+  .badge-container {
+    position: relative;
+    display: inline-block;
+    margin: 20px auto 28px;
+  }
+
+  .badge-ring {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(var(--accent-yellow) 0deg, var(--accent-cyan) 120deg, var(--accent-green) 240deg, var(--accent-yellow) 360deg);
+    display: flex; align-items: center; justify-content: center;
+    animation: badgeSpin 4s linear infinite;
+    box-shadow: 0 0 40px rgba(255,215,0,0.4);
+  }
+
+  @keyframes badgeSpin {
+    from { filter: hue-rotate(0deg) drop-shadow(0 0 20px rgba(255,215,0,0.5)); }
+    to { filter: hue-rotate(360deg) drop-shadow(0 0 20px rgba(0,255,234,0.5)); }
+  }
+
+  .badge-inner {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: var(--bg-panel);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+  }
+
+  .complete-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--accent-yellow);
+    text-shadow: 0 0 30px rgba(255,215,0,0.5);
+    margin-bottom: 8px;
+  }
+
+  .complete-sub {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .final-score {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,215,0,0.25);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .score-stat { text-align: center; }
+  .score-stat .stat-val {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--accent-yellow);
+  }
+  .score-stat .stat-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 4px;
+  }
+
+  .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg-dark); }
+  ::-webkit-scrollbar-thumb { background: var(--accent-blue); border-radius: 2px; }
+
+  /* Responsive */
+  @media (max-width: 500px) {
+    .panel { padding: 24px 18px; }
+    .game-title { font-size: 1.8rem; }
+    .question-text { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Particles -->
+<div class="particles" id="particles"></div>
+
+<div class="game-container">
+
+  <!-- SCREEN 1: Title -->
+  <div class="screen active" id="screen-title">
+    <div class="panel title-screen">
+      <div class="panel-corner tl"></div><div class="panel-corner tr"></div>
+      <div class="panel-corner bl"></div><div class="panel-corner br"></div>
+
+      <div class="logo-svg">
+        <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" width="120" height="132">
+          <!-- Shield outer (black) -->
+          <path d="M100 10 L175 45 L175 115 Q175 170 100 205 Q25 170 25 115 L25 45 Z"
+            fill="#0d1e36" stroke="#111" stroke-width="7" stroke-linejoin="round"/>
+          <!-- Shield inner (blue) -->
+          <path d="M100 24 L162 54 L162 115 Q162 160 100 191 Q38 160 38 115 L38 54 Z"
+            fill="none" stroke="#2255cc" stroke-width="4" stroke-linejoin="round"/>
+
+          <!-- Large blue-grey gear (top-left) -->
+          <g transform="translate(78, 88)">
+            <g id="gear-large">
+              <!-- Gear teeth -->
+              <path d="
+                M0,-38 L5,-30 L-5,-30 Z
+                M0,38 L5,30 L-5,30 Z
+                M-38,0 L-30,5 L-30,-5 Z
+                M38,0 L30,5 L30,-5 Z
+                M-27,-27 L-20,-18 L-18,-20 Z
+                M27,-27 L20,-18 L18,-20 Z
+                M-27,27 L-20,18 L-18,20 Z
+                M27,27 L20,18 L18,20 Z
+              " fill="#8899cc" stroke="none"/>
+              <circle r="34" fill="#8899cc"/>
+              <circle r="14" fill="#0d1e36"/>
+              <!-- Gear teeth as rounded rects rotated -->
+              <rect x="-6" y="-42" width="12" height="14" rx="3" fill="#8899cc" transform="rotate(0)"/>
+              <rect x="-6" y="-42" width="12" height="14" rx="3" fill="#8899cc" transform="rotate(45)"/>
+              <rect x="-6" y="-42" width="12" height="14" rx="3" fill="#8899cc" transform="rotate(90)"/>
+              <rect x="-6" y="-42" width="12" height="14" rx="3" fill="#8899cc" transform="rotate(135)"/>
+              <rect x="-6" y="-42" width="12" height="14" rx="3" fill="#8899cc" transform="rotate(180)"/>
+              <rect x="-6" y="-42" width="12" height="14" rx="3" fill="#8899cc" transform="rotate(225)"/>
+              <rect x="-6" y="-42" width="12" height="14" rx="3" fill="#8899cc" transform="rotate(270)"/>
+              <rect x="-6" y="-42" width="12" height="14" rx="3" fill="#8899cc" transform="rotate(315)"/>
+              <!-- Inner circle hole -->
+              <circle r="15" fill="#0d1e36"/>
+            </g>
+          </g>
+
+          <!-- Small red gear (bottom-right) -->
+          <g transform="translate(128, 130)">
+            <rect x="-5" y="-30" width="10" height="12" rx="2.5" fill="#cc3355" transform="rotate(0)"/>
+            <rect x="-5" y="-30" width="10" height="12" rx="2.5" fill="#cc3355" transform="rotate(40)"/>
+            <rect x="-5" y="-30" width="10" height="12" rx="2.5" fill="#cc3355" transform="rotate(80)"/>
+            <rect x="-5" y="-30" width="10" height="12" rx="2.5" fill="#cc3355" transform="rotate(120)"/>
+            <rect x="-5" y="-30" width="10" height="12" rx="2.5" fill="#cc3355" transform="rotate(160)"/>
+            <rect x="-5" y="-30" width="10" height="12" rx="2.5" fill="#cc3355" transform="rotate(200)"/>
+            <rect x="-5" y="-30" width="10" height="12" rx="2.5" fill="#cc3355" transform="rotate(240)"/>
+            <rect x="-5" y="-30" width="10" height="12" rx="2.5" fill="#cc3355" transform="rotate(280)"/>
+            <rect x="-5" y="-30" width="10" height="12" rx="2.5" fill="#cc3355" transform="rotate(320)"/>
+            <circle r="24" fill="#cc3355"/>
+            <circle r="10" fill="#0d1e36"/>
+          </g>
+        </svg>
+      </div>
+      <h1 class="game-title">PASSWORD<br>DEFENDERS</h1>
+      <div class="title-divider"></div>
+      <button class="btn btn-primary" onclick="showScreen('screen-rules')">CLICK TO CONTINUE</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: Rules -->
+  <div class="screen" id="screen-rules">
+    <div class="panel">
+      <div class="panel-corner tl"></div><div class="panel-corner tr"></div>
+      <div class="panel-corner bl"></div><div class="panel-corner br"></div>
+
+      <h2 class="rules-title">RULES</h2>
+      <p class="rules-subtitle"> Please read the instructons before proceeding.</p>
+
+      <div class="rule-item">
+
+        <p class="rule-text"><strong>Choose one correct answer</strong>- Players three options for each question — pick the correct one from the options.</p>
+      </div>
+      <div class="rule-item">
+        <p class="rule-text"><strong>Correct answers earn +10 points</strong> and unlock the next lock and head to next level.</p>
+      </div>
+      <div class="rule-item">
+        <p class="rule-text"><strong>Wrong answers earn no points</strong>, but you'll receive a <strong>security tip</strong> explaining strong and secure password feedback.</p>
+      </div>
+      <div class="rule-item">
+        <p class="rule-text"><strong>You cannot skip questions.</strong>- every level must be answered to proceed.</p>
+      </div>
+      <div class="rule-item">
+        <p class="rule-text"><strong>Complete all levels</strong> to crack the safe and earn your Password Defender badge!</p>
+      </div>
+      <div class="rule-item">
+        <p class="rule-text"><strong>GOOD LUCK</strong></p>
+      </div>
+
+      <br>
+      <div style="display:flex; gap:12px; justify-content:center;">
+        <button class="btn btn-secondary" onclick="showScreen('screen-title')">← BACK</button>
+        <button class="btn btn-primary" onclick="startGame()">DEPLOY →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: Question -->
+  <div class="screen" id="screen-question">
+    <div class="panel">
+      <div class="panel-corner tl"></div><div class="panel-corner tr"></div>
+      <div class="panel-corner bl"></div><div class="panel-corner br"></div>
+
+      <!-- HUD -->
+      <div class="hud">
+        <div class="hud-item">
+          <span class="hud-label">Points</span>
+          <span class="hud-value" id="hud-points">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Level</span>
+          <span class="hud-value" id="hud-level">1 / 8</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Status</span>
+          <span class="hud-value" style="color:var(--accent-green); font-size:0.8rem;">ACTIVE</span>
+        </div>
+      </div>
+
+      <!-- Lock row -->
+      <div class="lock-row" id="lock-row"></div>
+
+      <!-- Question -->
+
+      <p class="question-label">Level <span id="q-level-num">1</span> Password case scenario</p>
+      <h2 class="question-text" id="q-context"></h2>
+      <p class="question-hint">Hint: Choose the option that would relate to password security the most.</p>
+
+      <!-- Options -->
+      <div class="options-grid" id="options-grid"></div>
+
+      <!-- Feedback -->
+      <div class="feedback-box" id="feedback-box">
+        <div class="fb-title" id="fb-title"></div>
+        <div id="fb-text"></div>
+      </div>
+
+      <!-- Next -->
+      <div class="next-btn-row" id="next-btn-row" style="display:none;">
+        <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()">NEXT LEVEL →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 4: Complete -->
+  <div class="screen" id="screen-complete">
+    <div class="panel complete-screen">
+      <div class="panel-corner tl"></div><div class="panel-corner tr"></div>
+      <div class="panel-corner bl"></div><div class="panel-corner br"></div>
+
+      <div class="badge-container">
+        <div class="badge-ring">
+          <div class="badge-inner">🏅</div>
+        </div>
+      </div>
+
+      <h2 class="complete-title">YOU HAVE CRACKED<br>THE CODE!</h2>
+      <p class="complete-sub">Outstanding work, Defender. The safe is open and your client's documents are secured. You've proven you know how to build a strong password defence.</p>
+
+      <div class="final-score">
+        <div class="score-stat">
+          <div class="stat-val" id="final-points">0</div>
+          <div class="stat-label">Points Earned</div>
+        </div>
+        <div class="score-stat">
+          <div class="stat-val" id="final-correct">0</div>
+          <div class="stat-label">Correct Answers</div>
+        </div>
+        <div class="score-stat">
+          <div class="stat-val" id="final-badge">🏅</div>
+          <div class="stat-label">Badge</div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-green" onclick="collectBadge()">COLLECT BADGE ✓</button>
+        <button class="btn btn-secondary" onclick="restartGame()">PLAY AGAIN ↺</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ===== GAME DATA =====
+const questions = [
+  {
+    context: "Level 1 — Which of these passwords would be tough for a hacker to guess instantly?",
+    options: [
+      { text: "123456", correct: false, tip: "Sequential numbers are among the most commonly used and first-guessed passwords. They offer zero security." },
+      { text: "2003/08/07", correct: false, tip: "Using your birth date is very risky — it's personal info that can easily be found on social media or public records." },
+      { text: "Pa$$w0rD", correct: true, tip: null }
+    ],
+    correctExplanation: "Avoid common words combined with standard sequential numbers like '123'. ALso mix uppercase letters, symbols and numbers. Making it harder to crack than numeric sequences or dates."
+  },
+  {
+    context: "Level 2 — Why is 'abcdef' considered an incredibly weak password?",
+    options: [
+      { text: "Password is too short", correct: false, tip: "The answer is the use of alphabetical pattern which is among the easiest one to guess." },
+      { text: "Follows easy alphabetical pattern", correct: true, tip: null },
+      { text: "Uses personal information", correct: false, tip: "The answer is the use of alphabetical pattern which is among the easiest one to guess." }
+    ],
+    correctExplanation: "Easy patterns like 'abcdef' are in every hacker's dictionary. Adding numbers at the end doesn't help much."
+  },
+  {
+    context: "Level 3 — You have a dog named Poodle born on 2024. Why would Poodle2024 be an unsafe choice?",
+    options: [
+      { text: "Not enough uppercase letters", correct: false, tip: "Name + birth year is a very predictable pattern. If someone knows your info, this is one of the first things they'll try." },
+      { text: "Lack of special symbol", correct: false, tip: "Special symbol wont matter if the password contains personal information that can be easily found in social medias." },
+      { text: "Vulnerable social engineering", correct: true, tip: null }
+    ],
+    correctExplanation: "Information that can be easily found on your social profiles (pets, birthdays, sports teams) should never be used in a password."
+  },
+  {
+    context: "Level 4 — If an attcker is trying to 'brute-force' guess your password, which characteristic provides the strongest defense?",
+    options: [
+      { text: "Using capital letter at beginning", correct: false, tip: "When external force brute-forces the system, uppercase letters become pretty predictable unless the length of the password is significantly long." },
+      { text: "Significantly long password (16+)", correct: true, tip: null },
+      { text: "Replacing 'a' with '@'", correct: false, tip: "Replacing letters with identical symbols becomes an easy guesswork as some patterns are typical known tactic among the cyber world, like 'O' and '0', 'S' and '$', 'E' and '3'" }
+    ],
+    correctExplanation: "Length increases mathematical 'entropy' exponentially. A long, simple phrase takes much longer to crack than a short, complex one"
+  },
+  {
+    context: "Level 5 — You use the password BlueSky_68 for both an online clothstore and your primary email. The clothstore gets hacked. What is the risk?",
+
+    options: [
+      { text: "Only the clothstore account is in danger", correct: false, tip: "That is likely the case but information the hackers received from the breached website might come to harm you because of your primary email's password. " },
+      { text: "Hackers will use 'credential stuffing' to try that same password on your email", correct: true, tip: null },
+      { text: "Your computer will get a virus", correct: false, tip: "This criteria is irrelevant to the scenario. " }
+    ],
+    correctExplanation: "Reusing passwords creates a domino effect. If a low-security website gets breached, hackers will test those exact credentials on high-value targets like emails and banks."
+  },
+  {
+    context: "Level 6 - If a hacker successfully guesses or steals your password, what provides a vital secondary defense?",
+
+    options: [
+      {text: "Clearing your browser history", correct:false, tip: "Clearing the browser history doesnt totally hide your privacy from hackers. A password hazard is more critical to all your online systems. "},
+      {text: "Multi-Factor Authentication (MFA/2FA) requiring a code from your phone", correct: true, tip:null},
+      {text: "Using a dark background theme", correct: false, tip:"The theme of your desktop or device doesnt affect the security or hinder any cyber security objectives."},
+    ],
+    correctExplanation: "MFA ensures that even if your password fails completely, an attacker still cannot access your account without physical possession of your secondary device."
+  },
+  {
+    context: "Level 7 - What is the safest way to manage dozens of unique, strong passwords for all your different accounts?",
+
+    options: [
+      {text: "Write them down in a text document on your desktop", correct:false, tip:"There is vulnerability risk of losing your text document in your computer file. A digital Password Manager woulde be handy."},
+      {text: "Use slight variations of the same password for every site", correct: false, tip:"The passwords would fall into guessable scenario hence prompting more risks."},
+      {text: "Use a secure digital Password Manager", correct: true, tip:null},
+    ],
+    correctExplanation: "Password managers securely encrypt your credentials, meaning you only need to remember one strong 'master password' to access the rest safely."
+  },
+  {
+    context: "Level 8 - You just bought a new Wi-Fi router and the setup sticker says the password is admin. What should you do immediately?",
+
+    options: [
+      {text: "Change it immediately to a custom, strong passphrase", correct:true, tip:null},
+      {text: "Leave it as it is", correct: false, tip:"Factory default passwords are documented publicly hence the information is easily guessable by hackers. Never set up an easy keyword."},
+      {text: "Share your password with your neighbors", correct: false, tip:"Sharing passwords to other people only brings more risk to be hacked."},
+    ],
+    correctExplanation: "Factory default passwords (like admin, password, or 1234) are publicly documented online. Attackers actively scan networks looking for devices that never changed their default settings"
+  }
+];
+
+let currentQuestion = 0;
+let points = 0;
+let correctCount = 0;
+let answered = false;
+let levelResults = []; // 'correct' | 'wrong' per completed level
+
+// ===== PARTICLES =====
+function createParticles() {
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 25; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = (8 + Math.random() * 12) + 's';
+    p.style.animationDelay = (Math.random() * 15) + 's';
+    p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
+    container.appendChild(p);
+  }
+}
+
+// ===== SCREEN MANAGEMENT =====
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== GAME LOGIC =====
+function startGame() {
+  currentQuestion = 0;
+  points = 0;
+  correctCount = 0;
+  levelResults = [];
+  showScreen('screen-question');
+  renderQuestion();
+}
+
+function makeLockSVG(state) {
+  // state: 'upcoming' | 'current' | 'unlocked'
+  // For unlocked: shackle is open (shifted up-right)
+  const isOpen = state === 'unlocked';
+  const shackle = isOpen
+    ? `<path class="lock-shackle" d="M14 22 L14 10 Q14 4 22 4 Q30 4 30 10 L30 16" stroke-width="4" stroke-linecap="round" fill="none"/>`
+    : `<path class="lock-shackle" d="M14 22 L14 12 Q14 4 22 4 Q30 4 30 12 L30 22" stroke-width="4" stroke-linecap="round" fill="none"/>`;
+  return `<svg viewBox="0 0 44 52" xmlns="http://www.w3.org/2000/svg" width="44" height="52">
+    ${shackle}
+    <rect class="lock-body" x="4" y="22" width="36" height="26" rx="5" stroke-width="2"/>
+    <circle class="lock-keyhole" cx="22" cy="35" r="4"/>
+    <rect class="lock-keyhole" x="20" y="35" width="4" height="6" rx="1"/>
+  </svg>`;
+}
+
+function renderLocks() {
+  const row = document.getElementById('lock-row');
+  row.innerHTML = '';
+  for (let i = 0; i < questions.length; i++) {
+    const div = document.createElement('div');
+    div.className = 'lock-indicator';
+    if (i < currentQuestion) {
+      const result = levelResults[i]; // 'correct' or 'wrong'
+      if (result === 'wrong') {
+        div.classList.add('wrong-done');
+        div.innerHTML = makeLockSVG('current'); // closed lock, styled red via CSS
+      } else {
+        div.classList.add('unlocked');
+        div.innerHTML = makeLockSVG('unlocked'); // open lock, styled cyan
+      }
+    } else if (i === currentQuestion) {
+      div.classList.add('current');
+      div.innerHTML = makeLockSVG('current');
+    } else {
+      div.classList.add('upcoming');
+      div.innerHTML = makeLockSVG('upcoming');
+    }
+    row.appendChild(div);
+  }
+}
+
+function renderQuestion() {
+  answered = false;
+  const q = questions[currentQuestion];
+
+  document.getElementById('hud-points').textContent = points;
+  document.getElementById('hud-level').textContent = (currentQuestion + 1) + ' / ' + questions.length;
+  document.getElementById('q-level-num').textContent = currentQuestion + 1;
+  document.getElementById('q-context').textContent = q.context;
+
+  renderLocks();
+
+  const grid = document.getElementById('options-grid');
+  grid.innerHTML = '';
+  const letters = ['A', 'B', 'C'];
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = `<span class="option-letter">${letters[i]}</span><span class="option-password">${opt.text}</span>`;
+    btn.onclick = () => selectOption(i);
+    grid.appendChild(btn);
+  });
+
+  // Hide feedback & next
+  const fb = document.getElementById('feedback-box');
+  fb.className = 'feedback-box';
+  document.getElementById('next-btn-row').style.display = 'none';
+}
+
+function selectOption(index) {
+  if (answered) return;
+  answered = true;
+
+  const q = questions[currentQuestion];
+  const opts = document.querySelectorAll('.option-btn');
+  const fb = document.getElementById('feedback-box');
+  const fbTitle = document.getElementById('fb-title');
+  const fbText = document.getElementById('fb-text');
+
+  // Disable all
+  opts.forEach(o => o.classList.add('disabled'));
+
+  if (q.options[index].correct) {
+    opts[index].classList.remove('disabled');
+    opts[index].classList.add('correct');
+    points += 10;
+    correctCount++;
+    document.getElementById('hud-points').textContent = points;
+
+    fb.className = 'feedback-box correct-fb show';
+    fbTitle.innerHTML = '✅ THE ANSWER IS CORRECT — +10 POINTS RECEIVED';
+    fbText.textContent = q.correctExplanation;
+
+    // Points toast
+    const toast = document.createElement('div');
+    toast.className = 'points-toast';
+    toast.textContent = '+10';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 1200);
+
+  } else {
+    opts[index].classList.remove('disabled');
+    opts[index].classList.add('wrong');
+
+    // Reveal correct
+    q.options.forEach((opt, i) => {
+      if (opt.correct) {
+        opts[i].classList.remove('disabled');
+        opts[i].classList.add('correct');
+      }
+    });
+
+    fb.className = 'feedback-box wrong-fb show';
+    fbTitle.innerHTML = '❌ THE ANSWER IS WRONG';
+    fbText.innerHTML = `<strong>Here's why:</strong> ${q.options[index].tip}<br><br><em>The strongest password was <strong style="color:var(--accent-green)">${q.options.find(o=>o.correct).text}</strong> — ${q.correctExplanation}</em>`;
+  }
+
+  // Show next or finish
+  levelResults[currentQuestion] = q.options[index].correct ? 'correct' : 'wrong';
+  const nextRow = document.getElementById('next-btn-row');
+  nextRow.style.display = 'flex';
+  const nextBtn = document.getElementById('next-btn');
+  if (currentQuestion >= questions.length - 1) {
+    nextBtn.textContent = 'CRACK THE SAFE 🔓';
+    nextBtn.onclick = showComplete;
+  } else {
+    nextBtn.textContent = 'NEXT LEVEL →';
+    nextBtn.onclick = nextQuestion;
+  }
+}
+
+function nextQuestion() {
+  currentQuestion++;
+  renderQuestion();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showComplete() {
+  document.getElementById('final-points').textContent = points;
+  document.getElementById('final-correct').textContent = correctCount + ' / ' + questions.length;
+
+  // Badge based on score
+  const badge = points >= 70 ? '🥇' : points >= 50 ? '🥈' : '🥉';
+  document.getElementById('final-badge').textContent = badge;
+  document.querySelector('.badge-inner').textContent = badge;
+
+  showScreen('screen-complete');
+}
+
+function collectBadge() {
+  const btn = document.querySelector('.btn-green');
+  btn.textContent = '✓ BADGE COLLECTED!';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+}
+
+function restartGame() {
+  showScreen('screen-title');
+}
+
+// ===== INIT =====
+createParticles();
+</script>
+</body>
+</html>
