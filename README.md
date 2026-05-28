@@ -59,6 +59,7 @@ Evidence is stored in:
 ```text
 Day-1-Group-Formation/
 
+
 Week 2 Progress
 In Week 2, we developed the main game idea and improved our UX and accessibility planning.
 
