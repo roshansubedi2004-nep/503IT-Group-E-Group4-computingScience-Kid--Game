@@ -4,5 +4,5 @@
 | Reeshim Rai       | 15701796   | rishimrai12       | Game Design                                 |
 | Tej B. Shahi      | 15697569   | Tejbahadurshahi96 | Research and Meeting Notes                  |
 | Bishal Shankar    | 15931474   | Shankarb2         | Task Management / Project Co-ordinator      |
-| Kunal Sharma      |            |                   | Minute-Taker / Evidence Manager             |
-
+| Asutosh shiwakoti | 16023990   | asutoshshiwakoti9 | Evidence Manager                            |
+| Kunal sharma      |            |                   | minute taker                                |
