@@ -2,7 +2,7 @@
 | ----------------- | ---------- | ----------------- | ------------------------------------------- |
 | Roshan Subedi     | 15782452   | roshansubedi2004  | Chair / Meeting Leader                      |
 | Reeshim Rai       | 15701796   | rishimrai12       | Game Design                                 |
-| Tej B. Shahi      | 15697569   | Tejbahadurshahi96 | Research                   |
+| Tej B. Shahi      | 15697569   | Tejbahadurshahi96 | Research and meeting manager                  |
 | Bishal Shankar    | 15931474   | Shankarb2         | Task Management / Project Co-ordinator      |
 | Asutosh shiwakoti | 16023990   | asutoshshiwakoti9 | Evidence Manager                            |
 | Kunal sharma      |  15774103  | Sharmak2007       | time taker                                  |
