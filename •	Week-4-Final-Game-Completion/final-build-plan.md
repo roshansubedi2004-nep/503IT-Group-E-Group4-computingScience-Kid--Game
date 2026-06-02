@@ -1,1 +1,11 @@
+| Prompt                                      | Group Response                                                                                                                                                            |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Our game title is...                        | Password Defender                                                                                                                                                         |
+| Our chosen tool/platform is...              | HTML, CSS, JavaScript, and GitHub                                                                                                                                         |
+| This week we completed...                   | We completed the progress audit, final build plan, testing record draft, bug-fix log draft, portfolio evidence map, and presentation planning.                            |
+| The game/prototype currently works by...    | The player opens the prototype in a browser, reads the instructions, chooses password safety answers, and receives feedback.                                              |
+| Testing showed that...                      | The prototype opens successfully and the main buttons work correctly, but the reward/score message and final screenshots need improvement.                                |
+| We fixed or improved...                     | We improved instructions, feedback explanations, testing evidence, and final presentation planning.                                                                       |
+| The evidence uploaded to GitHub includes... | progress-audit.md, final-build-plan.md, testing-record.md, bug-fix-log.md, portfolio-evidence-map.md, presentation-plan.md, speaking-roles.md, and meeting-06-minutes.md. |
+| Before next week, we still need to...       | Finish final prototype polish, upload screenshots, complete testing evidence, and prepare the individual report evidence.                                                 |
 
