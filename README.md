@@ -131,7 +131,7 @@ In Week 1, our group started the project and organised the basic team structure.
 - Early planning for the cyber-safety game
 - Group meeting notes and reflection
 
-**Evidence folder:**
+Evidence folder:
 
 ```text
 Day-1-Group-Formation/
