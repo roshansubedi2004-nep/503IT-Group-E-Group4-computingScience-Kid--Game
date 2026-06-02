@@ -131,7 +131,9 @@ In Week 1, our group started the project and organised the basic team structure.
 - Early planning for the cyber-safety game
 - Group meeting notes and reflection
 
-
+<p align="center">
+  <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80" alt="Cyber security banner" width="100%">
+</p>
 
 ***Evidence folder:***
 ```text
