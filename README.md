@@ -1,12 +1,13 @@
 # Password Defender
 
-**503IT Group E - Group 4**
+**503IT Communication and Collaboration | Group E - Group 4**
 
-An educational cyber-safety game that helps teenagers and university students learn how to create stronger passwords and avoid unsafe password habits.
+![Project Status](https://img.shields.io/badge/status-near%20final%20completion-blue)
+![Topic](https://img.shields.io/badge/topic-password%20safety-brightgreen)
+![Built With](https://img.shields.io/badge/built%20with-HTML%20%7C%20CSS%20%7C%20JavaScript-orange)
+![Collaboration](https://img.shields.io/badge/collaboration-GitHub-black)
 
-![Project Status](https://img.shields.io/badge/status-prototype-blue)
-![Built With](https://img.shields.io/badge/built%20with-HTML%2C%20CSS%2C%20JavaScript-orange)
-![Topic](https://img.shields.io/badge/topic-password%20safety-green)
+Password Defender is an educational cyber-safety game designed to help teenagers and university students understand password safety through a simple interactive learning experience.
 
 ---
 
@@ -14,80 +15,51 @@ An educational cyber-safety game that helps teenagers and university students le
 
 - [Project Overview](#project-overview)
 - [Project Aim](#project-aim)
-- [Target Audience](#target-audience)
-- [Key Features](#key-features)
-- [Cyber-Safety Topics Covered](#cyber-safety-topics-covered)
-- [Technology Used](#technology-used)
+- [Group Details](#group-details)
 - [Group Members and Roles](#group-members-and-roles)
-- [How to Run the Prototype](#how-to-run-the-prototype)
-- [Testing and Feedback](#testing-and-feedback)
-- [Screenshots](#screenshots)
-- [Future Improvements](#future-improvements)
+- [Current Prototype](#current-prototype)
+- [Weekly Progress](#weekly-progress)
+- [Testing and Improvements](#testing-and-improvements)
+- [GitHub Evidence Structure](#github-evidence-structure)
+- [Final Project Status](#final-project-status)
+- [Project Summary](#project-summary)
 
 ---
 
 ## Project Overview
 
-**Password Defender** is an interactive educational cyber-safety game created for the **503IT Communication and Collaboration** module.
+**Password Defender** is an educational cyber-safety game created for the **503IT Communication and Collaboration** module.
 
-The game teaches users about password safety through simple challenges, feedback, scores, and rewards. It focuses on common risks such as weak passwords, reused passwords, password theft, hacking attempts, and sharing personal information online.
+The aim of the project is to teach users about password safety in a clear, simple and interactive way. The game helps users understand weak passwords, reused passwords, password theft, hacking risks and the importance of creating strong and secure passwords.
+
+The project combines cyber-safety learning with game-based interaction so users can learn through questions, feedback, scores and reward ideas.
 
 ---
 
 ## Project Aim
 
-The aim of this project is to design and develop a simple educational game that helps users:
+Our aim is to design and develop a simple educational cyber-safety game that teaches users how to create stronger passwords and avoid unsafe password habits.
+
+The game helps users learn how to:
 
 - Create strong passwords
 - Avoid common password mistakes
-- Understand password-related cyber threats
-- Recognise unsafe password habits
-- Learn through feedback, scores, and rewards
+- Understand password threats
+- Avoid using personal information in passwords
+- Learn through feedback, scores and rewards
 
 ---
 
-## Target Audience
+## Group Details
 
-The project is designed for:
-
-- Teenagers
-- University students
-- Beginner internet users who want to improve password safety
-
----
-
-## Key Features
-
-| Feature | Description |
+| Item | Details |
 |---|---|
-| Interactive gameplay | Users complete password-safety challenges |
-| Feedback system | The game gives advice after user choices |
-| Score/reward system | Users can track their progress |
-| Simple interface | Easy to use for beginners |
-| Educational content | Explains strong password habits clearly |
-
----
-
-## Cyber-Safety Topics Covered
-
-- Weak passwords
-- Reused passwords
-- Password theft
-- Brute-force attacks
-- Personal information in passwords
-- Strong password creation
-- Safe online behaviour
-
----
-
-## Technology Used
-
-| Tool | Purpose |
-|---|---|
-| HTML | Page structure |
-| CSS | Styling and layout |
-| JavaScript | Game interaction |
-| GitHub | Collaboration and version control |
+| Module | 503IT Communication and Collaboration |
+| Group | Group E - Group 4 |
+| Project Title | Password Defender |
+| Cyber-Safety Topic | Password safety |
+| Target Audience | Teenagers and university students |
+| Chosen Tools | HTML, CSS, JavaScript and GitHub |
 
 ---
 
@@ -95,41 +67,169 @@ The project is designed for:
 
 | Name | Role / Responsibility |
 |---|---|
-| Roshan Subedi | Group leader, GitHub organisation, instructions, evidence, presentation planning |
-| Reeshim Rai | Storyboard, design support, UX/accessibility, prototype improvement |
-| Bishal Shankar | Game concept support, first challenge, password safety content |
-| Ashutosh Siwakoti | Prototype development, extra interaction, screenshots, presentation support |
-| Tej B. Shahi | Testing, feedback messages, bug-fix log, GitHub evidence |
+| Roshan Subedi | Group leader, GitHub organisation, instructions, evidence and presentation planning |
+| Reeshim Rai | Storyboard, design support, UX/accessibility and prototype improvement |
+| Bishal Shankar | Game concept support, first challenge and password safety content |
+| Ashutosh Siwakoti | Prototype development, extra interaction, screenshots and presentation support |
+| Tej B. Shahi | Testing, feedback messages, bug-fix log and GitHub evidence |
 | Kunal Sharma | Presentation support and earlier group evidence contribution |
 
 ---
 
-## How to Run the Prototype
+## Current Prototype
 
-1. Download or clone the repository.
-2. Open the project folder.
-3. Open `prototype-v1.html` in a web browser.
-4. Play the game and complete the password-safety challenges.
+The current Password Defender prototype allows the player to:
 
----
-
-## Testing and Feedback
-
-The prototype was tested by group members to check:
-
-- Whether the game works correctly
-- Whether feedback messages are clear
-- Whether the interface is easy to understand
-- Whether the password-safety content is useful
-- Whether the prototype meets the project aim
+- Open the game in a browser
+- Read the title and instructions
+- Answer password safety questions
+- Click answer buttons
+- Receive correct or wrong feedback
+- Learn a password safety lesson
+- See a reward, score or success message idea
 
 ---
 
-## Screenshots
+## Weekly Progress
 
-Add screenshots here:
+### Week 1: Group Formation and Planning
 
-```md
+In Week 1, our group started the project and organised the basic team structure.
+
+**Completed work:**
+
+- Group formation
+- Role allocation
+- Initial project discussion
+- GitHub repository setup
+- Early planning for the cyber-safety game
+- Group meeting notes and reflection
+
+**Evidence folder:**
+
+```text
+Day-1-Group-Formation/
+
+Week 2: Concept Development and Prototype Planning
+In Week 2, we developed the main game idea and improved our UX and accessibility planning.
+
+Completed work:
+
+Final cyber-safety topic selection
+Game title: Password Defender
+Target audience selection
+Game concept canvas
+Storyboard
+UX and accessibility review
+Tool comparison
+Final tool choice: HTML, CSS and JavaScript
+Prototype Version 1 build plan
+First playable prototype idea
+Testing plan
+Meeting minutes
+AI use log
+Individual contribution logs
+Evidence folders:
+
+Day-2-Concept-Development/
+Week-2-Session-1-UX-Accessibility/
+Week-2-Session-2-Tool-Selection/
+Week-2-Prototype-Start/
+AI-Use-Evidence/
+Individual-Contribution-Logs/
+
+Week 3: Development, Testing and Presentation Planning
+In Week 3, we focused on improving the prototype, planning the presentation and organising portfolio evidence.
+
+Completed work:
+
+Prototype Version 2 planning
+Extra challenge and interaction planning
+Testing results
+Peer prototype review
+Appendix evidence map
+Presentation draft plan
+Speaking roles
+Individual report structure
+Portfolio evidence linking plan
+Updated contribution logs
+Evidence folders:
+
+Week-3-Development-Testing/
+Week-3-Appendix-Planning/
+Week-3-Presentation-Planning/
+Week-3-Portfolio-Planning/
+Peer-Feedback/
+Individual-Contribution-Logs/
+
+Week 4: Final Game Completion and Evidence Organisation
+In Week 4, we focused on final game completion, testing, bug fixing and final evidence organisation.
+
+Completed or ongoing work:
+
+Week 4 progress audit
+Final build plan
+Final prototype folder
+Final prototype screenshots
+Testing record
+Bug-fix log
+Portfolio evidence map
+Presentation plan
+Speaking roles
+Meeting 06 minutes
+Week 4 reflection
+Final checklist
+Updated AI use log
+Updated individual contribution logs
+Evidence folders:
+
+Week-4-Final-Game-Completion/
+AI-Use-Evidence/
+Individual-Contribution-Logs/
+
+Testing and Improvements
+Testing helped the group identify problems and improve the prototype.
+
+Issue Found	Improvement Made
+Instructions were not clear enough	Added clearer instructions
+Buttons needed to be easier to understand	Improved button labels
+Feedback was too short	Added educational feedback explanations
+Prototype needed more interaction	Planned and added extra challenge ideas
+GitHub evidence needed better organisation	Created weekly folders and evidence files
+GitHub Evidence Structure
+Our repository is organised by week so the project journey is easy to follow.
+
+AI-Use-Evidence/
+Day-1-Group-Formation/
+Day-2-Concept-Development/
+Week-2-Prototype-Start/
+Week-2-Session-1-UX-Accessibility/
+Week-2-Session-2-Tool-Selection/
+Week-3-Development-Testing/
+Week-4-Final-Game-Completion/
+Individual-Contribution-Logs/
+Peer-Feedback/
+storyboard/
+README.md
+
+Screenshots
+Add your final screenshots here:
+
 ![Home Screen](screenshots/home-screen.png)
 ![Password Challenge](screenshots/password-challenge.png)
 ![Feedback Screen](screenshots/feedback-screen.png)
+
+Final Project Status
+Password Defender is now close to final completion. The main game idea, UX planning, prototype work, testing evidence, presentation planning and portfolio evidence are organised in GitHub.
+
+Before final submission, we still need to:
+
+Finish final prototype polish
+Upload final screenshots
+Complete final testing evidence
+Practise the final presentation
+Prepare individual portfolio/report evidence
+Project Summary
+Password Defender helped our group practise communication, collaboration, GitHub evidence management, prototype development, testing and presentation planning.
+
+The project also helped us learn how to design a simple cyber-safety learning game for teenagers and university students. By using HTML, CSS, JavaScript and GitHub, our group was able to create and organise an interactive prototype that supports cyber-safety education.
