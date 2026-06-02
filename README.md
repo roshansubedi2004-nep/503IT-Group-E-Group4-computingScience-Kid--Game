@@ -5,7 +5,7 @@
 
 **503IT Communication and Collaboration | Group E - Group 4**
 
-![Project Status](https://img.shields.io/badge/status-near%20final%20completion-blue)
+![Project Status](https://img.shields.io/badge/status-finished-blue)
 ![Topic](https://img.shields.io/badge/topic-password%20safety-brightgreen)
 ![Built With](https://img.shields.io/badge/built%20with-HTML%20%7C%20CSS%20%7C%20JavaScript-orange)
 ![Collaboration](https://img.shields.io/badge/collaboration-GitHub-black)
