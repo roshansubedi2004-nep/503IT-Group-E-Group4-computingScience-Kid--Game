@@ -131,6 +131,20 @@ In Week 1, our group started the project and organised the basic team structure.
 - Early planning for the cyber-safety game
 - Group meeting notes and reflection
 
+- ## Screenshots
+
+Add your final game screenshots here after uploading them into a `screenshots` folder.
+
+<p align="center">
+  <img src="screenshots/home-screen.png" alt="Password Defender Home Screen" width="45%">
+  <img src="screenshots/password-challenge.png" alt="Password Challenge Screen" width="45%">
+</p>
+
+<p align="center">
+  <img src="screenshots/feedback-screen.png" alt="Feedback Screen" width="45%">
+  <img src="screenshots/final-score.png" alt="Final Score Screen" width="45%">
+</p>
+
 ***Evidence folder:***
 ```text
 
