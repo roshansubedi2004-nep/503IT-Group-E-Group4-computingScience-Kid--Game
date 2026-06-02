@@ -129,8 +129,8 @@ Testing plan
 Meeting minutes
 AI use log
 Individual contribution logs
-Evidence folders:
 
+Evidence folders:
 Day-2-Concept-Development/
 Week-2-Session-1-UX-Accessibility/
 Week-2-Session-2-Tool-Selection/
