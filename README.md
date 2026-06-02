@@ -2,10 +2,6 @@
   <img src="https://img.freepik.com/free-vector/cyber-security-concept_23-2148532223.jpg" alt="Password Defender Cyber Security Banner" width="100%">
 </p>
 
-<p align="center">
-  <img src="screenshots/feedback-screen.png" alt="Feedback Screen" width="45%">
-</p>
-
 # Password Defender
 
 **503IT Communication and Collaboration | Group E - Group 4**
