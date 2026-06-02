@@ -256,8 +256,4 @@ Prepare individual portfolio/report evidence
 Project Summary
 Password Defender helped our group practise communication, collaboration, GitHub evidence management, prototype development, testing and presentation planning.
 
-
-final-score.png" alt="Final Score Screen" width="45%">
-</p>
-
 The project also helped us learn how to design a simple cyber-safety learning game for teenagers and university students. By using HTML, CSS, JavaScript and GitHub, our group was able to create and organise an interactive prototype that supports cyber-safety education.
