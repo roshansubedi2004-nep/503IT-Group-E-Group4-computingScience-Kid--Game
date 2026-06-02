@@ -238,12 +238,19 @@ Peer-Feedback/
 storyboard/
 README.md
 
-Screenshots
-Add your final screenshots here:
+## Screenshots
 
-![Home Screen](screenshots/home-screen.png)
-![Password Challenge](screenshots/password-challenge.png)
-![Feedback Screen](screenshots/feedback-screen.png)
+Add your final game screenshots here after uploading them into a `screenshots` folder.
+
+<p align="center">
+  <img src="screenshots/home-screen.png" alt="Password Defender Home Screen" width="45%">
+  <img src="screenshots/password-challenge.png" alt="Password Challenge Screen" width="45%">
+</p>
+
+<p align="center">
+  <img src="screenshots/feedback-screen.png" alt="Feedback Screen" width="45%">
+  <img src="screenshots/final-score.png" alt="Final Score Screen" width="45%">
+</p>
 
 Final Project Status
 Password Defender is now close to final completion. The main game idea, UX planning, prototype work, testing evidence, presentation planning and portfolio evidence are organised in GitHub.
