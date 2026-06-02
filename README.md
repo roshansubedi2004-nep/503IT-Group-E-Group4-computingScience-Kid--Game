@@ -238,6 +238,8 @@ Peer-Feedback/
 storyboard/
 README.md
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Screenshots
 
 Add your final game screenshots here after uploading them into a `screenshots` folder.
@@ -251,6 +253,10 @@ Add your final game screenshots here after uploading them into a `screenshots` f
   <img src="screenshots/feedback-screen.png" alt="Feedback Screen" width="45%">
   <img src="screenshots/final-score.png" alt="Final Score Screen" width="45%">
 </p>
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Final Project Status
 Password Defender is now close to final completion. The main game idea, UX planning, prototype work, testing evidence, presentation planning and portfolio evidence are organised in GitHub.
