@@ -38,6 +38,29 @@ The aim of the project is to teach users about password safety in a clear, simpl
 The project combines cyber-safety learning with game-based interaction so users can learn through questions, feedback, scores and reward ideas.
 
 ---
+---
+
+## Password Safety Awareness
+
+<p align="center">
+  <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Password Security Icon" width="120">
+  <img src="https://cdn-icons-png.flaticon.com/512/2889/2889676.png" alt="Cyber Safety Icon" width="120">
+  <img src="https://cdn-icons-png.flaticon.com/512/6195/6195700.png" alt="Secure Login Icon" width="120">
+</p>
+
+Password safety is important because weak or reused passwords can make it easier for attackers to access personal accounts. Password Defender teaches users how to recognise unsafe password habits and build stronger passwords.
+
+### Good Password Habits
+
+| Safe Habit | Why It Matters |
+|---|---|
+| Use long passwords | Longer passwords are harder to guess |
+| Mix letters, numbers and symbols | This makes passwords stronger |
+| Avoid personal information | Names, birthdays and phone numbers are easy to guess |
+| Do not reuse passwords | One hacked account should not risk all accounts |
+| Keep passwords private | Passwords should not be shared with friends or strangers |
+
+---
 
 ## Project Aim
 
