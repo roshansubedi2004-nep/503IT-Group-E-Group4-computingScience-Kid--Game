@@ -2,6 +2,16 @@
   <img src="https://img.freepik.com/free-vector/cyber-security-concept_23-2148532223.jpg" alt="Password Defender Cyber Security Banner" width="100%">
 </p>
 
+## Screenshots
+
+<p align="center">
+  <img src="screenshots/home-screen.png" alt="Home Screen" width="45%">
+  <img src="screenshots/password-challenge.png" alt="Password Challenge" width="45%">
+</p>
+
+<p align="center">
+  <img src="screenshots/feedback-screen.png" alt="Feedback Screen" width="45%">
+</p>
 
 # Password Defender
 
