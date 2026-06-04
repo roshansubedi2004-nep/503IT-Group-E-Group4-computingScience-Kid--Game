@@ -7,13 +7,13 @@
 
 | Task                          | Responsible Student | Deadline | Status      |
 | ----------------------------- | ------------------- | -------- | ----------- |
-| Research                      | Tej B. Shahi        | Week 1   | In progress |
-| Game Concept                  | Reeshim Rai         | Week 1   | In progress |
+| Research                      | Tej B. Shahi        | Week 1   | Done        |
+| Game Concept                  | Reeshim Rai         | Week 1   | Done        |
 | Canvas Design                 | Reeshim Rai         | Week 1   | Done        |
 | Storyboard                    | Reeshim Rai         | Week 1   | Done        |
-| Prototype                     | Roshan Subedi       | Week 2   | Not started |
-| Presentation Slides           | Bishal Shankar      | Week 2   | Not started |
-| Individual Portfolio Evidence | All members         | Week 2   | In progress |
+| Prototype                     | Roshan Subedi       | Week 2   | Done        |
+| Presentation Slides           | Bishal Shankar      | Week 2   | Done        |
+| Individual Portfolio Evidence | All members         | Week 2   | Done        |
 
 
 | Risk                  | Impact                           | Solution                                    |
