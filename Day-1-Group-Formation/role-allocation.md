@@ -5,5 +5,5 @@
 | Game Designer               | Reeshim Rai       | Designs the game idea, rules, and learning activities. |
 | Prototype / Canvas Designer | Bishal Shankar    | Creates canvas, storyboard, and visual design.         |
 | GitHub Manager              | Roshan Subedi     | Checks repository structure and commits.               |
-| Presentation Lead           | Asutosh Shiwakoti | Plans presentation slides and speaking order.          |
+
 
