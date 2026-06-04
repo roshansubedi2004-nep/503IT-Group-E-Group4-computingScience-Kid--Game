@@ -8,6 +8,6 @@
 | One issue or problem                                |feedback needs reviewing                                  |
 | One improvement suggestion                          | more points in feedback                                  |
 | Was the cyber-safety lesson clear?                  | Yes bacause it suggest why the password is strong or not |
-| Was the prototype suitable for the target audience? | Yes beacuse it targers the problem of teenagers          |
+| Was the prototype suitable for the target audience? | Yes beacuse it targets the problem of teenagers          |
 | Action the group should take next                   | make interesting UV                                      |
 
