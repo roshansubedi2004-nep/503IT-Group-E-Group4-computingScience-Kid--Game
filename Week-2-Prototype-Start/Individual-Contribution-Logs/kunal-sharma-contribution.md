@@ -1,11 +1,11 @@
-| Individual log item                     | Your answer                                                                                                   |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| Name                                    | kunal sharma                                                                                                 |
-| Student ID                              | 15774103                                                                                                     |
-| GitHub username                         | sharmak2007                                                                                            |
-| What I worked on today                  |I refined the player options and prepared feedback messaging for successful and unsuccessful choices within the prototype. |
-| Tool I used                             | HTML / VS Code / GitHub                                                                                       |
-| File/prototype part I created or edited | Week-2-Prototype-Start/prototype-v1.html                                                                      |
-| Commit message or evidence              | Add answer choices and feedback                                                                               |
-| What I learned                          |Developed skills in creating educational feedback that explains the strengths and weaknesses of password selections.                              |
-| What I need to do next                  | Plan to enhance feedback messaging and conduct comprehensive testing of all answer options.
+| Individual log item                         | Your answer                                                                                                                                                                                                  |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Name**                                    | KUNAL SHARMA                                                                                                                                                                                                 |
+| **Student ID**                              | 15774103                                                                                                                                                                                                     |
+| **GitHub username**                         | Sharmak2007                                                                                                                                                                                                  |
+| **What I worked on today**                  | I created and updated the project documentation on GitHub, recorded the team's progress, and organised development evidence so that project updates could be tracked clearly throughout the prototype stage. |
+| **Tool I used**                             | GitHub / VS Code                                                                                                                                                                                             |
+| **File/prototype part I created or edited** | README.md and project documentation files                                                                                                                                                                    |
+| **Commit message or evidence**              | Update project documentation and track development progress                                                                                                                                                  |
+| **What I learned**                          | I learned how GitHub documentation helps teams manage projects, record progress, and communicate changes effectively.                                                                                        |
+| **What I need to do next**                  | I need to continue updating the documentation, record future improvements, and add evidence from prototype testing and development.                                                                          |
