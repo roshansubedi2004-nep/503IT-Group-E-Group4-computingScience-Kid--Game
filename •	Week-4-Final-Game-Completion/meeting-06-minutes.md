@@ -23,8 +23,8 @@
 | Task / Action                                                    | Responsible Person | Deadline     | Status      |
 | ---------------------------------------------------------------- | ------------------ | ------------ | ----------- |
 | Update progress audit                                            | Roshan Subedi      | Today        | Done        |
-| Improve Challenge 1/design content previously assigned to Bishal | Reeshim Rai        | Today        | In Progress |
-| Improve feedback/testing record                                  | Tej B. Shahi       | Today        | In Progress |
-| Final prototype files/screenshots                                | Reeshim Rai        | This weekend | In Progress |
+| Improve Challenge 1/design content previously assigned to Bishal | Reeshim Rai        | Today        | Completed   |
+| Improve feedback/testing record                                  | Tej B. Shahi       | Today        | Completed   |
+| Final prototype files/screenshots                                | Reeshim Rai        | This weekend | Completed   |
 | Update AI use log and contribution logs                          | Roshan Subedi      | Today        | Done        |
 
