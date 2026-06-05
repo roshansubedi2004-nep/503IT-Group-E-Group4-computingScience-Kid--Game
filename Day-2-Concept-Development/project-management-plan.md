@@ -9,9 +9,9 @@
 | ----------------------------- | ------------------- | -------- | ----------- |
 | Research                      | Tej B. Shahi        | Week 1   | Done        |
 | Game Concept                  | Reeshim Rai         | Week 1   | Done        |
-| Canvas Design                 | Reeshim Rai         | Week 1   | Done        |
-| Storyboard                    | Reeshim Rai         | Week 1   | Done        |
-| Prototype                     | Roshan Subedi       | Week 2   | Done        |
+| Canvas Design                 | Reeshim Rai / Bishal Shankar   | Week 1   | Done        |
+| Storyboard                    | Bishal Shankar      | Week 1   | Done        |
+| Prototype                     | Roshan Subedi / Bishal Shankar | Week 2   | Done        |
 | Presentation Slides           | Bishal Shankar      | Week 2   | Done        |
 | Individual Portfolio Evidence | All members         | Week 2   | Done        |
 
