@@ -11,10 +11,22 @@
 | ----------------------------------- | ------------------- | --------------------- | -------- | ---------- |
 | Research cyber-safety topic         | Tej B. Shahi        | Browser/GitHub        | Week 2   |  Done      |
 | Create game content/questions/story | Reeshim Rai         | GitHub/Docs           | Week 2   |  Done      |
-| Create visual design/assets         | Roshan Subedi       | HTML and CSS          | Week 2   |  Done       |
+| Create visual design/assets         | Roshan Subedi       | HTML and CSS          | Week 2   |  Done      |
 | Build or prepare prototype          | Bishal Shankar      | HTML, CSS, JavaScript | Week 2   |  Done      |
 | Test the prototype                  | All members         | Browser               | Week 2   |  Done      |
 | Prepare presentation slides         | Kunal Sharma        | PowerPoint            | Week 3   |  Done      |
+
+Screenshot for simple version of game using Html/css/js
+<img width="1060" height="645" alt="test 1 design" src="https://github.com/user-attachments/assets/55e8990e-3446-41a8-8ffa-c1f1d334d30b" />
+
+------------
+Feedback for use of Html/css/js
+<img width="1033" height="793" alt="text file" src="https://github.com/user-attachments/assets/02850680-f72b-4eae-b574-857ebf8b15d8" />
+
+---------
+
+
+
 
 
 
