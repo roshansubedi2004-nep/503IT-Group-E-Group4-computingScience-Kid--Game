@@ -18,5 +18,5 @@
 | Task                     | Responsible Student | Deadline   |
 | ------------------------ | ------------------- | ---------- |
 | Research Password Safety | Tej B. Shahi        | Next class |
-| Create Storyboard        | Reeshim Rai         | Next class |
+| Create Storyboard        | Reeshim Rai  / Bishal Shankar       | Next class |
 | Setup GitHub Repository  | Roshan Subedi       | Today      |
