@@ -5,4 +5,4 @@
 | Tej B. Shahi      | 15697569   | Tejbahadurshahi96 | Research and meeting manager                  |
 | Bishal Shankar    | 15931474   | Shankarb2         | Task Management / Project Co-ordinator      |
 | Kunal sharma      |  15774103  | Sharmak2007       | time taker/evedence manager               |
-| Asutosh Shiwakoti      |  16023990  | asutoshshiwakoti9 | time taker/evedence manager          |
+| Asutosh Shiwakoti      |  16023990  | asutoshshiwakoti9 | presentation planner / testing / evidence collector        |
