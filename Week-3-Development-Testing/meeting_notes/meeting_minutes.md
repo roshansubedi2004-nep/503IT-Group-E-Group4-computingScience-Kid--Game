@@ -6,7 +6,7 @@
 | Group number           | Group 4                                                    |
 | Chair                  | Roshan Subedi                                              |
 | Minute-taker           | Tej B. Shahi                                               |
-| Attendees              |  Tej, Bishal, ashutosh                                     |
+| Attendees              |  Tej, Bishal, ashutosh, reeshim, roshan, kunal             |
 | Main discussion points | Tool choice, prototype plan, tasks and GitHub evidence     |
 | Tool decision made     | HTML, CSS and JavaScript                                   |
 | Tasks assigned         | Research, questions, design, coding, testing and slides    |
