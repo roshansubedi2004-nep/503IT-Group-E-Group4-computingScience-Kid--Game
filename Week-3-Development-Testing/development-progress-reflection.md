@@ -785,7 +785,7 @@
     <div class="logo-ring"></div>
     <div class="logo-ring"></div>
     <div class="logo-ring"></div>
-    <div class="logo-icon">🔐</div>
+    <div class="logo-icon"></div>
   </div>
   <div class="game-title">PASSWORD DEFENDERS</div>
   <div class="game-tagline">Cybersecurity Training Module v2.0</div>
@@ -797,7 +797,7 @@
     &gt; Complete all levels to earn your badge.<br>
     &gt; <span style="color:var(--neon-cyan)">Good luck, Defender.</span>
   </div>
-  <button class="start-btn" id="start-btn">▶ START MISSION</button>
+  <button class="start-btn" id="start-btn"> START MISSION</button>
 </div>
 
 <!-- ════════════════════════════════════
@@ -815,7 +815,7 @@
       <li><span class="bullet">06</span>Earn a final grade and badge based on your total score.</li>
     </ul>
   </div>
-  <button class="mission-btn" id="begin-mission-btn">⚡ BEGIN MISSION</button>
+  <button class="mission-btn" id="begin-mission-btn"> BEGIN MISSION</button>
 </div>
 
 <!-- ════════════════════════════════════
@@ -830,15 +830,15 @@
         <span class="hud-value" id="hud-pts">0</span>
       </div>
       <div class="hud-center" id="locks-row">
-        <span class="lock-icon">🔒</span>
-        <span class="lock-icon">🔒</span>
-        <span class="lock-icon">🔒</span>
-        <span class="lock-icon">🔒</span>
-        <span class="lock-icon">🔒</span>
-        <span class="lock-icon">🔒</span>
-        <span class="lock-icon">🔒</span>
-        <span class="lock-icon">🔒</span>
-        <span class="lock-icon">🔒</span>
+        <span class="lock-icon"></span>
+        <span class="lock-icon"></span>
+        <span class="lock-icon"></span>
+        <span class="lock-icon"></span>
+        <span class="lock-icon"></span>
+        <span class="lock-icon"></span>
+        <span class="lock-icon"></span>
+        <span class="lock-icon"></span>
+        <span class="lock-icon"></span>
       </div>
       <div class="hud-item">
         <span class="hud-label">Level</span>
@@ -873,11 +873,11 @@
      LEVEL UP SCREEN
 ════════════════════════════════════ -->
 <div class="screen" id="screen-levelup">
-  <div class="levelup-badge" id="levelup-badge">🛡️</div>
+  <div class="levelup-badge" id="levelup-badge"></div>
   <div class="levelup-title" id="levelup-title">LEVEL 1 COMPLETE!</div>
   <div class="levelup-sub" id="levelup-sub">You're building strong instincts.</div>
   <div class="levelup-tip-box">
-    <span class="tip-label">💡 SECURITY INSIGHT</span>
+    <span class="tip-label"> SECURITY INSIGHT</span>
     <span id="levelup-tip"></span>
   </div>
   <button class="mission-btn" id="continue-btn">CONTINUE →</button>
@@ -888,7 +888,7 @@
 ════════════════════════════════════ -->
 <div class="screen" id="screen-reward">
   <div class="panel reward-panel">
-    <div class="reward-badges" id="reward-badges">🏅</div>
+    <div class="reward-badges" id="reward-badges"></div>
     <div class="reward-title">MISSION COMPLETE!</div>
     <div class="reward-sub" id="reward-sub">You've finished Password Defenders and levelled up your cyber skills.</div>
     <div class="separator"></div>
@@ -899,7 +899,7 @@
     </div>
     <div class="grade-badge" id="grade-badge">GRADE: S</div>
     <div class="separator"></div>
-    <button class="restart-btn" id="restart-btn">↺ PLAY AGAIN</button>
+    <button class="restart-btn" id="restart-btn"> PLAY AGAIN</button>
   </div>
 </div>
 
@@ -916,11 +916,11 @@ const questions = [
     text: "Which password would be hardest for a hacker to guess?",
     choices: [
       { text: "Einstein123", correct: false,
-        tip: "❌ Famous names + simple numbers are the first thing hackers try. Dictionary attacks crack these in seconds." },
+        tip: " Famous names + simple numbers are the first thing hackers try. Dictionary attacks crack these in seconds." },
       { text: "science", correct: false,
-        tip: "❌ Single common words offer zero protection. Even your phone can crack this instantly." },
+        tip: " Single common words offer zero protection. Even your phone can crack this instantly." },
       { text: "SMTH_6x9#Lab!", correct: true,
-        tip: "✅ This blends uppercase, lowercase, numbers, symbols, and a personal but non-obvious pattern. Hard to guess, hard to crack." }
+        tip: " This blends uppercase, lowercase, numbers, symbols, and a personal but non-obvious pattern. Hard to guess, hard to crack." }
     ]
   },
   {
@@ -929,11 +929,11 @@ const questions = [
     text: "Which password is the safest to use?",
     choices: [
       { text: "Password2024", correct: false,
-        tip: "❌ 'Password' is the #1 most-used password worldwide. Adding a year doesn't help — hackers know this trick." },
+        tip: " 'Password' is the #1 most-used password worldwide. Adding a year doesn't help — hackers know this trick." },
       { text: "Gl0wR0ck!$77", correct: true,
-        tip: "✅ Random-seeming words with deliberate letter substitutions (0 for O) plus symbols and numbers = excellent security." },
+        tip: " Random-seeming words with deliberate letter substitutions (0 for O) plus symbols and numbers = excellent security." },
       { text: "123456789", correct: false,
-        tip: "❌ Sequential numbers are cracked in under 1 second by modern hacking tools." }
+        tip: " Sequential numbers are cracked in under 1 second by modern hacking tools." }
     ]
   },
   {
@@ -942,11 +942,11 @@ const questions = [
     text: "What's the best approach for a secure password?",
     choices: [
       { text: "myname2008", correct: false,
-        tip: "❌ Your name + birth year is public information. Social media makes this embarrassingly easy to guess." },
+        tip: " Your name + birth year is public information. Social media makes this embarrassingly easy to guess." },
       { text: "qwerty", correct: false,
-        tip: "❌ Keyboard patterns are pre-loaded into every hacker's tool. Cracked in milliseconds." },
+        tip: " Keyboard patterns are pre-loaded into every hacker's tool. Cracked in milliseconds." },
       { text: "P3nc!l_Br34k$", correct: true,
-        tip: "✅ A common phrase creatively scrambled with symbols. Long, complex, and unpredictable — the three golden rules." }
+        tip: " A common phrase creatively scrambled with symbols. Long, complex, and unpredictable — the three golden rules." }
     ]
   },
 
@@ -957,11 +957,11 @@ const questions = [
     text: "Why is reusing passwords across sites dangerous?",
     choices: [
       { text: "Use one strong one: Sp@ce99!", correct: false,
-        tip: "❌ Even a strong password reused is a liability. If one site gets hacked, ALL your accounts are exposed instantly (called credential stuffing)." },
+        tip: " Even a strong password reused is a liability. If one site gets hacked, ALL your accounts are exposed instantly (called credential stuffing)." },
       { text: "Use a phrase: ilovecats", correct: false,
-        tip: "❌ Short common phrases offer little security, and reusing them multiplies the damage if leaked." },
+        tip: " Short common phrases offer little security, and reusing them multiplies the damage if leaked." },
       { text: "Use unique ones: T!g3r_Sch00l, R@in_M@p22", correct: true,
-        tip: "✅ Unique passwords per account = if one is breached, others stay safe. Use a password manager to remember them all!" }
+        tip: " Unique passwords per account = if one is breached, others stay safe. Use a password manager to remember them all!" }
     ]
   },
   {
@@ -970,11 +970,11 @@ const questions = [
     text: "Which type of password survives a database leak best?",
     choices: [
       { text: "abc123 (short, simple)", correct: false,
-        tip: "❌ If the database stores unsalted hashes, 'abc123' is cracked in the same second it's downloaded." },
+        tip: " If the database stores unsalted hashes, 'abc123' is cracked in the same second it's downloaded." },
       { text: "Jessica1995 (name + year)", correct: false,
-        tip: "❌ Personal info passwords are in every 'wordlist' hackers use for fast cracking attacks." },
+        tip: " Personal info passwords are in every 'wordlist' hackers use for fast cracking attacks." },
       { text: "xK#9!mP2_qL@7 (random 13 chars)", correct: true,
-        tip: "✅ Long, random passwords take thousands of years to brute-force even with modern computers. Length = power." }
+        tip: " Long, random passwords take thousands of years to brute-force even with modern computers. Length = power." }
     ]
   },
   {
@@ -983,11 +983,11 @@ const questions = [
     text: "What is the safest response to this request?",
     choices: [
       { text: "Type password if the email looks official", correct: false,
-        tip: "❌ This is phishing. Legitimate sites NEVER ask for your password via email. The site could be a fake clone." },
+        tip: " This is phishing. Legitimate sites NEVER ask for your password via email. The site could be a fake clone." },
       { text: "Click the link to see if it's real first", correct: false,
-        tip: "❌ Even clicking can install malware. Always go directly to the website by typing the address yourself." },
+        tip: " Even clicking can install malware. Always go directly to the website by typing the address yourself." },
       { text: "Delete the email, log in directly to the real site", correct: true,
-        tip: "✅ Phishing scams fool millions of people a year. Always navigate directly and enable 2FA — a second layer of protection." }
+        tip: " Phishing scams fool millions of people a year. Always navigate directly and enable 2FA — a second layer of protection." }
     ]
   },
 
@@ -998,11 +998,11 @@ const questions = [
     text: "Which password strategy is used by security professionals?",
     choices: [
       { text: "Monthly changed password: January2025!", correct: false,
-        tip: "❌ Predictable changes (month names, numbers) give hackers an easy pattern to exploit." },
+        tip: " Predictable changes (month names, numbers) give hackers an easy pattern to exploit." },
       { text: "A passphrase: correct-horse-battery-staple", correct: true,
-        tip: "✅ Four random words create massive length and entropy. Easy to memorise, nearly impossible to crack. This strategy is recommended by NIST (US security standards body)." },
+        tip: " Four random words create massive length and entropy. Easy to memorise, nearly impossible to crack. This strategy is recommended by NIST (US security standards body)." },
       { text: "Your initials + street number: JS247", correct: false,
-        tip: "❌ Incredibly short and easily guessed from social media. Never use personal info." }
+        tip: " Incredibly short and easily guessed from social media. Never use personal info." }
     ]
   },
   {
@@ -1011,11 +1011,11 @@ const questions = [
     text: "What is Two-Factor Authentication (2FA) and why does it help?",
     choices: [
       { text: "A second, longer password stored nearby", correct: false,
-        tip: "❌ Storing a backup password nearby defeats the whole point. One breach = everything gone." },
+        tip: " Storing a backup password nearby defeats the whole point. One breach = everything gone." },
       { text: "A code sent to your phone or app after login", correct: true,
-        tip: "✅ 2FA means even if a hacker has your password, they can't log in without your phone. Enable it on every account that offers it." },
+        tip: " 2FA means even if a hacker has your password, they can't log in without your phone. Enable it on every account that offers it." },
       { text: "Changing your password more often", correct: false,
-        tip: "❌ Frequent changes alone don't stop real-time attacks. 2FA adds a completely separate security layer." }
+        tip: " Frequent changes alone don't stop real-time attacks. 2FA adds a completely separate security layer." }
     ]
   },
   {
@@ -1024,11 +1024,11 @@ const questions = [
     text: "Which combination of habits best protects you online?",
     choices: [
       { text: "Strong password, write it on a sticky note", correct: false,
-        tip: "❌ Physical notes are easy to photograph, steal, or find. If someone visits your room — your account is gone." },
+        tip: " Physical notes are easy to photograph, steal, or find. If someone visits your room — your account is gone." },
       { text: "Memorise 20 different complex passwords", correct: false,
-        tip: "❌ Human memory is unreliable for complex strings. People end up simplifying, which defeats the purpose." },
+        tip: " Human memory is unreliable for complex strings. People end up simplifying, which defeats the purpose." },
       { text: "Password manager + unique passwords + 2FA enabled", correct: true,
-        tip: "✅ The gold standard. A password manager generates and stores ultra-strong unique passwords. 2FA covers you even if one leaks. This is what security experts actually do." }
+        tip: " The gold standard. A password manager generates and stores ultra-strong unique passwords. 2FA covers you even if one leaks. This is what security experts actually do." }
     ]
   }
 ];
@@ -1039,19 +1039,19 @@ const questions = [
 const levelTips = {
   1: {
     title: "LEVEL 1 COMPLETE — PASSWORD BASICS",
-    badge: "🔓",
+    badge: "",
     sub: "You've cracked the basics. Hackers rely on weak, predictable passwords.",
     tip: "The #1 rule: length beats complexity. A 20-character passphrase is stronger than an 8-character string of gibberish. Aim for at least 12 characters — every extra character multiplies the difficulty of cracking it."
   },
   2: {
     title: "LEVEL 2 COMPLETE — CYBER HYGIENE",
-    badge: "🛡️",
+    badge: "",
     sub: "You're thinking like a defender now. Password habits matter as much as strength.",
     tip: "Have I Been Pwned (haveibeenpwned.com) lets you check if your email appeared in a known data breach. If it has, change your password for that service immediately — and any site where you used the same one."
   },
   3: {
     title: "ALL LEVELS COMPLETE — ELITE DEFENDER",
-    badge: "🏆",
+    badge: "",
     sub: "You've mastered password security. You're now safer than 95% of internet users.",
     tip: "Tools to use right now: (1) A password manager like Bitwarden (free) or 1Password. (2) Enable 2FA on your email, social media, and gaming accounts. (3) Check haveibeenpwned.com for breaches. Share what you learned with friends — cybersecurity works better when everyone is safer."
   }
@@ -1079,7 +1079,7 @@ function updateHUD() {
   // locks
   const locks = document.querySelectorAll('.lock-icon');
   locks.forEach((el, i) => {
-    el.textContent = i < currentQ ? '🔓' : '🔒';
+    el.textContent = i < currentQ ? '' : '';
     el.style.filter = i < currentQ ? 'drop-shadow(0 0 6px rgba(57,255,20,0.6))' : '';
   });
 
@@ -1134,16 +1134,16 @@ function selectAnswer(idx) {
   if (choice.correct) {
     points += 10;
     fbBox.classList.add('active', 'correct');
-    $('fb-title').textContent = '✓ CORRECT — +10 POINTS';
+    $('fb-title').textContent = ' CORRECT — +10 POINTS';
     // fly points
     flyPoints('+10');
   } else {
     fbBox.classList.add('active', 'wrong');
-    $('fb-title').textContent = '✗ INCORRECT — LEARN FROM THIS';
+    $('fb-title').textContent = ' INCORRECT — LEARN FROM THIS';
   }
 
-  const cleanTip = choice.tip.replace(/^[✅❌]\s*/,'');
-  const symbolMatch = choice.tip.match(/^[✅❌]/);
+  const cleanTip = choice.tip.replace(/^[]\s*/,'');
+  const symbolMatch = choice.tip.match(/^[]/);
   const symbol = symbolMatch ? symbolMatch[0] : '';
   const color = choice.correct ? 'var(--neon-green)' : 'var(--neon-pink)';
   $('fb-tip').innerHTML = (symbol ? `<strong style="color:${color}">${symbol}</strong> ` : '') + cleanTip;
@@ -1198,23 +1198,23 @@ function showReward() {
   if (pct === 100) {
     grade = 'GRADE: S — ELITE DEFENDER'; cls = 'grade-s';
     sub = 'Perfect score! You are a true cybersecurity defender. Share your knowledge with friends!';
-    badges = '🏆🏅🛡️';
+    badges = '';
   } else if (pct >= 80) {
     grade = 'GRADE: A — SECURITY EXPERT'; cls = 'grade-a';
     sub = 'Excellent work! You clearly understand how to stay safe online. Almost perfect!';
-    badges = '🏅🛡️✅';
+    badges = '';
   } else if (pct >= 60) {
     grade = 'GRADE: B — SECURITY AWARE'; cls = 'grade-b';
     sub = 'Good job! You know the basics but there\'s more to learn. Try again for a perfect score!';
-    badges = '🛡️✅';
+    badges = '';
   } else if (pct >= 40) {
     grade = 'GRADE: C — LEARNING'; cls = 'grade-c';
     sub = 'You\'re on your way. Review the tips you received and try again to level up!';
-    badges = '🔓📚';
+    badges = '';
   } else {
     grade = 'GRADE: F — NEEDS WORK'; cls = 'grade-f';
     sub = 'Passwords are your first line of defence. Review the tips carefully and try again!';
-    badges = '📚🔒';
+    badges = '';
   }
 
   $('reward-badges').textContent = badges;
