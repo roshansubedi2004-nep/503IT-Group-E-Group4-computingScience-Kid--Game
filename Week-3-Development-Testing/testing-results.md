@@ -3,7 +3,7 @@
 | Does the prototype open/start correctly?                   |    Yes | The HTML prototype opens correctly in the browser.                                                      |
 | Is the welcome/title screen clear?                         |    Yes | The title **"Password Defender"** is clearly shown on the first screen.                                 |
 | Are the instructions easy to understand?                   |    Yes | The instructions explain that the player must read the challenge, choose an answer, and check feedback. |
-| Can the player identify what to click/do?                  |    Yes | The answer buttons are clear and easy to click.                                                         |
+| Can the player identify what to click   ?                  |    Yes | The answer buttons are clear and easy to click.                                                         |
 | Does the first cyber-safety challenge work?                |    Yes | The first password safety challenge works and shows answer options.                                     |
 | Does any new challenge/interaction work?                   |    Yes | Challenge 2 / extra interaction is being added for Prototype Version 2.                                 |
 | Does the correct answer show useful feedback?              |    Yes | The correct answer shows a useful password safety message.                                              |
