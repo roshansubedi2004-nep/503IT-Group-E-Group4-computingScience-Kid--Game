@@ -28,3 +28,4 @@
 | Final prototype files/screenshots                                | Reeshim Rai        | This weekend | Completed   |
 | Update AI use log and contribution logs                          | Roshan Subedi      | Today        | Done        |
 
+<img width="828" height="1792" alt="WhatsApp Image 2026-06-05 at 3 17 16 PM" src="https://github.com/user-attachments/assets/4ef51297-78e9-4fba-95de-342f4d779a3d" />
